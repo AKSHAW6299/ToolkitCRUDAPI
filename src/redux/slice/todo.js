@@ -3,10 +3,11 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 // Our action is fetchTodos
 export const fetchTodos = createAsyncThunk('fetchTodos', async () => {
     const response = await fetch("https://jsonplaceholder.typicode.com/todos")
+    // ** This response.json() will automatically stored in action.payload!!
     return response.json();
 })
 
-
+// This is our STORE!!
 const todoSlice = createSlice({
     // the name of our slice
     name: "todo",
