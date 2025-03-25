@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-// Our action
+// Our action is fetchTodos
 export const fetchTodos = createAsyncThunk('fetchTodos', async () => {
     const response = await fetch("https://jsonplaceholder.typicode.com/todos")
     return response.json();
@@ -12,7 +12,7 @@ const todoSlice = createSlice({
     name: "todo",
     initialState: {
         isLoading: false,
-        data: null,
+        data: [],
         isError: false,
     },
     extraReducers: (builder) => {
